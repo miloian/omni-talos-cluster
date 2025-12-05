@@ -17,26 +17,27 @@ patches:
     file: patches/cni.yml
   - name: disable-kubeproxy
     file: patches/disable-kubeproxy.yml
-  # - name: install-cilium
-  #   file: patches/extraManifests.yml
+  - name: install-cilium
+    file: patches/extraManifests.yml
   - name: metric-server
     file: patches/metrics-server.yml
+  # - name: longhorn-mounts
+  #   file: patches/longhorn.yml
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
   - siderolabs/util-linux-tools
 ---
 kind: Workers
-name: workers
-labels:
-  type: worker
-machineClass:
-  name: cloud
-  size: 2
+machines:
+  - c1d979ba-6d17-4b89-9e9b-2d8854ffe9c7 # worker01
+  - 193eb71e-173a-4a24-b8a9-e745d13d2a04 # worker02
+  - 694c6e26-2a14-4ee8-985f-4167ef618ec3 # worker03
+patches:
+  - file: patches/longhorn.yml
 ---
 kind: ControlPlane
-labels:
-  type: control-plane
-machineClass:
-  name: cloud
-  size: 3
+machines:
+  - c461ca11-8735-4e0e-b226-57725940da6d # control01
+  - cfd0a011-cd14-4f84-af34-8f2432a5b0d5 # control02
+  - f8b8dbd8-94c7-48e9-8adb-889fd711b512 # control03

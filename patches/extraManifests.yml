@@ -1,7 +1,7 @@
 cluster:
   extraManifests:
-  - https://raw.githubusercontent.com/miloian/omni-talos-cluster/main/manifests/install-cilium.yaml
-  - https://raw.githubusercontent.com/miloian/omni-talos-cluster/main/manifests/L2Announcement.yaml
+  - https://raw.githubusercontent.com/miloian/omni-talos-cluster/develop/manifests/install-cilium.yaml
+  - https://github.com/miloian/omni-talos-cluster/raw/refs/heads/develop/manifests/L2Announcement.yaml
   - https://raw.githubusercontent.com/miloian/omni-talos-cluster/main/manifests/ip-pool.yml
   # - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
   - https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
