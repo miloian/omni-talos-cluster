@@ -16,8 +16,8 @@ patches:
     file: patches/disable-kubeproxy.yml
   - name: install-cilium
     file: patches/extraManifests.yml
-  - name: metric-server
-    file: patches/metrics-server.yml
+  # - name: metric-server
+  #   file: patches/metrics-server.yml
   - name: install-argo
     file: patches/installArgo.yml
 systemExtensions:
