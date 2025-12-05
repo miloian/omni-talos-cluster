@@ -1,0 +1,3 @@
+cluster:
+  extraManifests:
+  - https://raw.githubusercontent.com/miloian/omni-talos-cluster/refs/heads/develop/manifests/install-argo.yaml

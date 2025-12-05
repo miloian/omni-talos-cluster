@@ -1,0 +1,6 @@
+helm template \
+    cilium \
+    cilium/cilium \
+    --version 1.18.4 \
+    --namespace kube-system \
+    -f cilium-values.yaml > cilium.yaml

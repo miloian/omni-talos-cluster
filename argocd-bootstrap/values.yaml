@@ -1,0 +1,18 @@
+global:
+  domain: argocd.local.doveshimp.com
+
+# configs:
+#   params:
+#     server.insecure: true
+
+certificate:
+  enabled: true
+
+server:
+  ingress:
+    enabled: true
+    ingressClassName: cilium
+    annotations:
+      ingress.cilium.io/tls-passthrough: "true"
+      ingress.cilium.io/force-https: "enabled"
+    tls: true
