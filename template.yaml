@@ -3,7 +3,6 @@ name: homelab
 labels:
   template: true
   cni: none
-  kubespan: enabled
 kubernetes:
   version: v1.34.2
 talos:
@@ -11,8 +10,6 @@ talos:
 features:
   enableWorkloadProxy: true
 patches:
-  # - name: kubespan-enabled
-  #   file: patches/kubespan.yml
   - name: no-cni # we will install cilium in extraManifests
     file: patches/cni.yml
   - name: disable-kubeproxy
@@ -21,8 +18,6 @@ patches:
     file: patches/extraManifests.yml
   - name: metric-server
     file: patches/metrics-server.yml
-  - name: install-longhorn
-    file: patches/install-longhorn.yml
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
