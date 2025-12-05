@@ -21,8 +21,8 @@ patches:
     file: patches/extraManifests.yml
   - name: metric-server
     file: patches/metrics-server.yml
-  # - name: longhorn-mounts
-  #   file: patches/longhorn.yml
+  - name: install-longhorn
+    file: patches/install-longhorn.yml
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
