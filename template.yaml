@@ -18,8 +18,6 @@ patches:
     file: patches/extraManifests.yml
   - name: metric-server
     file: patches/metrics-server.yml
-  # - name: install-argo
-  #   file: patches/installArgo.yml
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
@@ -31,6 +29,7 @@ machines:
   - 193eb71e-173a-4a24-b8a9-e745d13d2a04 # worker02
   - 694c6e26-2a14-4ee8-985f-4167ef618ec3 # worker03
 patches:
+  - file: patches/worker-labels.yml
   - file: patches/longhorn.yml
 ---
 kind: ControlPlane

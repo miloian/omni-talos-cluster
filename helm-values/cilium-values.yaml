@@ -48,6 +48,9 @@ k8sClientRateLimit:
 l2announcements:
   enabled: true
 
+bgpControlPlane:
+  enabled: true
+
 externalIPs:
   enabled: true
 
