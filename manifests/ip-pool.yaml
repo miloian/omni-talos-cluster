@@ -1,8 +1,0 @@
-apiVersion: "cilium.io/v2"
-kind: CiliumLoadBalancerIPPool
-metadata:
-  name: "pool"
-spec:
-  blocks:
-    - start: 192.168.40.2 # Ensure this range is available on your network and reserved for K8s
-      stop: 192.168.40.254
