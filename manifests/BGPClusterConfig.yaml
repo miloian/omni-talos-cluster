@@ -5,7 +5,7 @@ metadata:
 spec:
   nodeSelector: # Ensures this BGP config applies to the specified RPi nodes
     matchLabels:
-      rack: yes
+      rack: "yes"
 #      topology.kubernetes.io/zone: announce
   bgpInstances:
   - name: "homelab-bgp" # Name of this BGP instance

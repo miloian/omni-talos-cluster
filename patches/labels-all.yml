@@ -1,0 +1,4 @@
+machine:
+  nodeLabels:
+    bgp: 65020
+    topology.kubernetes.io/zone: "announce"
