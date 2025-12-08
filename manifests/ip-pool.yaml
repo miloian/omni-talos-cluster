@@ -1,9 +1,8 @@
 apiVersion: "cilium.io/v2alpha1"
 kind: CiliumLoadBalancerIPPool
 metadata:
-  name: "lan-cloud-pool"
-  namespace: kube-system
+  name: "pool"
 spec:
   blocks:
-  - start: "192.168.34.50"
-    stop: "192.168.34.60"
+    - start: 192.168.40.2 # Ensure this range is available on your network and reserved for K8s
+      stop: 192.168.40.254

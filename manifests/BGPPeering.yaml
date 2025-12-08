@@ -1,0 +1,14 @@
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPPeerConfig
+metadata:
+  name: unifi # Named 'unifi' as it peers with the UDM Pro
+spec:
+  gracefulRestart: # Enabling graceful restart for smoother updates
+    enabled: true
+    restartTimeSeconds: 15
+  families:
+    - afi: ipv4
+      safi: unicast
+      advertisements:
+        matchLabels: # Selects the 'services' CiliumBGPAdvertisement via its label
+          advertise: "bgp"

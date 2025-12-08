@@ -1,0 +1,18 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumBGPAdvertisement
+metadata:
+  name: services
+  labels:
+    advertise: bgp # This label is used to select this advertisement
+spec:
+  advertisements:
+#    - advertisementType: PodCIDR
+    - advertisementType: Service
+      service:
+        addresses:
+          - LoadBalancerIP
+        selector:
+          # This selector aims to advertise all LoadBalancer services.
+          # It matches services having any label by checking for a key not matching 'never-used-value'.
+          matchExpressions:
+            - { key: somekey, operator: NotIn, values: [ 'never-used-value' ] }
