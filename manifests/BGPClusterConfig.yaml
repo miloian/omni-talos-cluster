@@ -5,7 +5,8 @@ metadata:
 spec:
   nodeSelector: # Ensures this BGP config applies to the specified RPi nodes
     matchLabels:
-      topology.kubernetes.io/zone: announce
+      rack: yes
+#      topology.kubernetes.io/zone: announce
   bgpInstances:
   - name: "homelab-bgp" # Name of this BGP instance
     localASN: 65001 # ASN for the K8s cluster's BGP

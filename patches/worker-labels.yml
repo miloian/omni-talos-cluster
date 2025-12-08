@@ -1,3 +1,4 @@
 machine:
   nodeLabels:
     topology.kubernetes.io/zone: "announce"
+    rack: yes
